@@ -3,56 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NTUT GDC 北科遊戲研究社</title>
-  <meta name="description" content="NTUT GDC 北科遊戲研究社 — 我們不只玩遊戲，我們還做遊戲。" />
+  <title>NTUT Game Dev Club 北科遊戲研究社</title>
+  <meta name="description" content="NTUT Game Dev Club 北科遊戲研究社 — 我們不只玩遊戲，我們還會做遊戲" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="pixel-decor" id="pixelDecor" aria-hidden="true"></div>
-
   <header class="site-header">
     <div class="container nav-container">
-      <a href="index.html" class="logo">NTUT GDC</a>
+      <a href="index.html" class="logo">NGDC</a>
       <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <nav class="site-nav" id="siteNav">
-        <ul class="nav-list">
-          <li><a href="index.html" aria-current="page">首頁</a></li>
-          <li><a href="projects.html">專案展示</a></li>
-          <li><a href="events.html">活動公告</a></li>
-          <li><a href="join.html">加入我們</a></li>
-          <li><a href="contact.html">聯絡我們</a></li>
-        </ul>
-      </nav>
+      <div class="nav-right">
+        <nav class="site-nav" id="siteNav">
+          <ul class="nav-list">
+            <li><a href="index.html" aria-current="page">首頁</a></li>
+            <li><a href="projects.html">專案展示</a></li>
+            <li><a href="events.html">活動公告</a></li>
+            <li><a href="join.html">加入我們</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+          </ul>
+        </nav>
+        <div class="nav-social">
+          <span class="nav-divider" aria-hidden="true"></span>
+          <!-- 之後請將下方連結換成實際的 Discord／Instagram 網址 -->
+          <a href="#" class="nav-social-link">Discord</a>
+          <a href="#" class="nav-social-link">Instagram</a>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
+      <div class="wave-decoration wave-decoration--left" aria-hidden="true"></div>
+      <div class="wave-decoration wave-decoration--right" aria-hidden="true"></div>
       <div class="container">
-        <h1 class="hero-title">NTUT GDC<br />北科遊戲研究社</h1>
+        <div class="hero-pixel-row" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <h1 class="hero-title">NTUT Game Dev Club<br />北科遊戲研究社</h1>
         <p class="hero-tagline">我們不只玩遊戲，我們還做遊戲</p>
         <p class="hero-desc">
-          一群喜歡遊戲開發的北科人，從企劃、美術、程式到音樂，
+          一群喜歡遊戲開發的學生，從企劃、美術、程式到音樂，
           一起把腦中的點子做成真正能玩的遊戲。
         </p>
         <a href="join.html" class="btn">加入我們</a>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-deep">
+      <div class="wave-decoration wave-decoration--left" aria-hidden="true"></div>
+      <div class="wave-decoration wave-decoration--right" aria-hidden="true"></div>
       <div class="container">
         <div class="section-title">
           <h2>關於我們</h2>
-          <p>認識 NTUT GDC 北科遊戲研究社</p>
+          <p>認識 NGDC 北科遊戲研究社</p>
         </div>
 
-        <div class="card-grid card-grid-vertical">
-          <div class="card">
+        <div class="about-panel">
+          <div class="about-block">
             <h3>我們想找到一起做遊戲的夥伴</h3>
             <p>
               做遊戲很有趣，但一個人做總覺得少了點什麼。我們想找到一群真心想把遊戲做出來的人，
@@ -60,7 +73,7 @@
             </p>
           </div>
 
-          <div class="card">
+          <div class="about-block">
             <h3>降低門檻，讓創作被看見</h3>
             <p>
               不會寫程式沒關係，熱愛創作就能加入。做遊戲是很有趣的創作媒介，
@@ -70,10 +83,10 @@
             </p>
           </div>
 
-          <div class="card">
+          <div class="about-block">
             <h3>我們在做的事</h3>
             <p>
-              從零開始的入門工作坊、主題式課程、共創時間，
+              從零開始的入門工作坊、主題式課程，
               讓每個人都能找到適合自己的方式踏入遊戲開發的世界。
             </p>
           </div>
@@ -82,9 +95,11 @@
     </section>
 
     <section class="section section-alt">
+      <div class="wave-decoration wave-decoration--left" aria-hidden="true"></div>
+      <div class="wave-decoration wave-decoration--right" aria-hidden="true"></div>
       <div class="container">
         <div class="section-title">
-          <h2>精選專案</h2>
+          <h2>社員專案</h2>
           <p>社員們正在進行的遊戲開發專案，點進專案展示頁看更多。</p>
         </div>
 
@@ -119,13 +134,13 @@
 
   <footer class="site-footer">
     <div class="container footer-container">
-      <p class="footer-logo">NTUT GDC ｜ 北科遊戲研究社</p>
+      <p class="footer-logo">NGDC ｜ 北科遊戲研究社</p>
       <ul class="footer-links">
         <li><a href="contact.html#discord">Discord</a></li>
         <li><a href="contact.html#instagram">Instagram</a></li>
         <li><a href="contact.html#email">Email</a></li>
       </ul>
-      <p class="footer-copy">&copy; 2026 NTUT GDC 北科遊戲研究社</p>
+      <p class="footer-copy">&copy; 2026 NGDC 北科遊戲研究社</p>
     </div>
   </footer>
 

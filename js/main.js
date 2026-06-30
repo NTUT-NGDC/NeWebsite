@@ -1,6 +1,6 @@
 /* =====================================================
-   NTUT GDC 北科遊戲研究社 — 共用前端腳本
-   功能：手機版選單開關、隨機像素背景裝飾
+   NGDC 北科遊戲研究社 — 共用前端腳本
+   功能：手機版選單開關、兩側海浪式像素方塊裝飾
    五個頁面皆共用本檔案，請勿另外複製修改。
    ===================================================== */
 
@@ -26,53 +26,65 @@
     });
   }
 
-  // ---- 隨機像素背景裝飾 ----
-  // 在 #pixelDecor 容器內，於畫面邊緣／角落區域產生隨機分布的
-  // 小方塊（約 14px），顏色在亮藍與暗藍灰之間交錯。
-  var decorContainer = document.getElementById("pixelDecor");
+  // ---- 兩側海浪式像素方塊裝飾 ----
+  // 每個 .wave-decoration 容器（包在各 section 內，見 css/style.css）
+  // 由上到下鋪滿好幾橫排，每排的方塊數量依正弦波平緩增減，
+  // 做出「寬緩起伏、不尖銳」的海浪節奏；顏色固定 4 階，
+  // 由外到內依序變亮，跟這排有幾顆方塊無關。
+  var WAVE_COLORS = ["#1d3a55", "#2c5a7a", "#3a7fa8", "#3fa9f5"];
+  var WAVE_SQUARE = 16; // px，方塊邊長（同一排內方塊間距固定在 css 的 .wave-row gap: 4px）
+  var WAVE_ROW_GAP = 8; // px，排與排之間的間距
+  var WAVE_BASE_COUNT = 3; // 每排平均幾顆方塊
+  var WAVE_AMPLITUDE = 2; // 起伏振幅（每排數量最多增減幾顆）
+  var WAVE_PERIOD = 10; // 波長（數字越大，波峰到波谷之間排數越多、越寬緩）
 
-  if (decorContainer) {
-    var PIXEL_COUNT = 55;
-    var COLOR_BRIGHT = [63, 169, 245]; // #3fa9f5
-    var COLOR_DIM = [44, 90, 122]; // #2c5a7a
-
-    function lerp(a, b, t) {
-      return Math.round(a + (b - a) * t);
+  function buildWaveRowCounts(rowCount) {
+    var counts = [];
+    for (var i = 0; i < rowCount; i++) {
+      var count = Math.round(
+        WAVE_BASE_COUNT + WAVE_AMPLITUDE * Math.sin((i / WAVE_PERIOD) * Math.PI * 2)
+      );
+      counts.push(Math.max(1, count));
     }
+    return counts;
+  }
 
-    function mixColor(t) {
-      var r = lerp(COLOR_DIM[0], COLOR_BRIGHT[0], t);
-      var g = lerp(COLOR_DIM[1], COLOR_BRIGHT[1], t);
-      var b = lerp(COLOR_DIM[2], COLOR_BRIGHT[2], t);
-      return "rgb(" + r + "," + g + "," + b + ")";
-    }
-
-    // 讓座標偏向 0% 或 100%（畫面邊緣），使裝飾集中在邊角
-    function edgeBiasedValue() {
-      var t = Math.pow(Math.random(), 2.2);
-      return Math.random() < 0.5 ? t * 16 : 100 - t * 16;
-    }
-
+  function renderWaveDecoration(container) {
+    var style = getComputedStyle(container);
+    var paddingTop = parseFloat(style.paddingTop) || 0;
+    var paddingBottom = parseFloat(style.paddingBottom) || 0;
+    var usableHeight = container.clientHeight - paddingTop - paddingBottom;
+    var rowUnit = WAVE_SQUARE + WAVE_ROW_GAP;
+    var rowCount = Math.max(1, Math.floor(usableHeight / rowUnit));
+    var rowCounts = buildWaveRowCounts(rowCount);
     var fragment = document.createDocumentFragment();
 
-    for (var i = 0; i < PIXEL_COUNT; i++) {
-      var pixel = document.createElement("span");
-      var size = 10 + Math.random() * 8; // 約 10~18px，平均 14px
-      var alongHorizontalEdge = Math.random() < 0.7;
+    rowCounts.forEach(function (count) {
+      var rowEl = document.createElement("div");
+      rowEl.className = "wave-row";
+      for (var c = 0; c < count; c++) {
+        var square = document.createElement("div");
+        square.className = "wave-square";
+        square.style.backgroundColor = WAVE_COLORS[Math.min(c, WAVE_COLORS.length - 1)];
+        rowEl.appendChild(square);
+      }
+      fragment.appendChild(rowEl);
+    });
 
-      var left = alongHorizontalEdge ? edgeBiasedValue() : Math.random() * 100;
-      var top = alongHorizontalEdge ? Math.random() * 100 : edgeBiasedValue();
-
-      pixel.style.left = left + "%";
-      pixel.style.top = top + "%";
-      pixel.style.width = size + "px";
-      pixel.style.height = size + "px";
-      pixel.style.backgroundColor = mixColor(Math.random());
-      pixel.style.opacity = (0.35 + Math.random() * 0.45).toFixed(2);
-
-      fragment.appendChild(pixel);
-    }
-
-    decorContainer.appendChild(fragment);
+    container.innerHTML = "";
+    container.appendChild(fragment);
   }
+
+  function initWaveDecorations() {
+    document.querySelectorAll(".wave-decoration").forEach(renderWaveDecoration);
+  }
+
+  initWaveDecorations();
+
+  // 視窗縮放時重新計算排數（用 debounce 避免拖曳縮放時頻繁重繪）
+  var resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(initWaveDecorations, 200);
+  });
 })();
