@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>活動公告 - NTUT GDC 北科遊戲研究社</title>
+  <meta name="description" content="NTUT GDC 北科遊戲研究社的近期公告與過往活動紀錄。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="pixel-decor" id="pixelDecor" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">NTUT GDC</a>
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-list">
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="projects.html">專案展示</a></li>
+          <li><a href="events.html" aria-current="page">活動公告</a></li>
+          <li><a href="join.html">加入我們</a></li>
+          <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h1>活動公告</h1>
+          <p>社團近期消息與過往活動紀錄</p>
+        </div>
+
+        <!--
+          ============================================================
+          ▼ 如何新增一筆新公告 ▼
+          1. 複製一整段 <article class="announcement">...</article>
+          2. 貼到對應區塊內（近期公告 或 過往活動紀錄）的最上方
+          3. 修改日期（.announcement-date）、標題（<h3>）與說明文字（<p>）
+          4. 若是已結束的活動，記得把整篇移到「過往活動紀錄」區塊，
+             並替 <article> 加上 class="announcement is-past"
+          ============================================================
+        -->
+
+        <h2>近期公告</h2>
+        <div class="announcement-list">
+          <article class="announcement">
+            <div class="announcement-date">2026.07.10</div>
+            <div class="announcement-body">
+              <h3>暑期遊戲開發工作坊招募中</h3>
+              <p>
+                不限經驗皆可參加，從零開始學習用 Godot 做出你的第一款小遊戲。
+                報名連結與詳細時間將於社團 Discord 公布。
+              </p>
+            </div>
+          </article>
+
+          <article class="announcement">
+            <div class="announcement-date">2026.07.24</div>
+            <div class="announcement-body">
+              <h3>社課：像素美術入門</h3>
+              <p>
+                邀請社內美術組成員分享像素風格美術製作流程與工具使用技巧，
+                歡迎對美術有興趣的社員與外部朋友一同參加。
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <h2 style="margin-top: 3rem;">過往活動紀錄</h2>
+        <div class="announcement-list">
+          <article class="announcement is-past">
+            <div class="announcement-date">2026.04.18</div>
+            <div class="announcement-body">
+              <h3>2026 春季迎新茶會</h3>
+              <p>
+                社團迎新活動順利落幕，感謝所有新舊社員的參與，
+                期待大家在接下來的學期一起做出更多有趣的作品。
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p class="footer-logo">NTUT GDC ｜ 北科遊戲研究社</p>
+      <ul class="footer-links">
+        <li><a href="contact.html#discord">Discord</a></li>
+        <li><a href="contact.html#instagram">Instagram</a></li>
+        <li><a href="contact.html#email">Email</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 NTUT GDC 北科遊戲研究社</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

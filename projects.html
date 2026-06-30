@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>專案展示 - NTUT GDC 北科遊戲研究社</title>
+  <meta name="description" content="NTUT GDC 北科遊戲研究社正在進行的遊戲開發專案展示。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="pixel-decor" id="pixelDecor" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">NTUT GDC</a>
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-list">
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="projects.html" aria-current="page">專案展示</a></li>
+          <li><a href="events.html">活動公告</a></li>
+          <li><a href="join.html">加入我們</a></li>
+          <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h1>專案展示</h1>
+          <p>社員們正在進行與已完成的遊戲開發專案</p>
+        </div>
+
+        <!--
+          ============================================================
+          ▼ 如何新增一筆新專案 ▼
+          1. 複製一整段 <article class="project-card">...</article>
+             （從 <article 開始到對應的 </article> 結束）
+          2. 貼到 .project-grid 區塊內
+          3. 修改以下內容：
+             - data-type="平台 動作 射擊"
+               → 改成此專案的遊戲類型（可複選，用空白分隔）
+               → 可用詞彙：平台 / 動作 / 射擊 / 解謎 / RPG
+                 （若要新增其他類型，記得同時在下方「篩選列」
+                 加入對應的 data-filter-type 按鈕）
+             - data-status="ongoing" 或 "done"
+               → ongoing = 進行中，done = 已完成
+             - .project-thumb 內文字：可替換成 <img> 放入真實截圖
+             - <h3> 專案名稱
+             - 簡介文字
+             - .tag：遊戲類型標籤（需與 data-type 一致）
+             - .badge-status：開發狀態文字
+               （進行中用 class="badge-status status-ongoing"，
+                已完成用 class="badge-status status-done"）
+             - .project-style：美術風格 / 技術描述
+             - .project-team：製作者或團隊名稱
+             - .project-links：外部連結（itch.io、GitHub、demo 等）
+          ============================================================
+        -->
+
+        <div class="filter-bar">
+          <div class="filter-group">
+            <span class="filter-group-label">遊戲類型</span>
+            <div class="filter-options">
+              <button class="filter-btn is-active" data-filter-type="all">全部</button>
+              <button class="filter-btn" data-filter-type="平台">平台</button>
+              <button class="filter-btn" data-filter-type="動作">動作</button>
+              <button class="filter-btn" data-filter-type="射擊">射擊</button>
+              <button class="filter-btn" data-filter-type="解謎">解謎</button>
+              <button class="filter-btn" data-filter-type="RPG">RPG</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-group-label">開發狀態</span>
+            <div class="filter-options">
+              <button class="filter-btn is-active" data-filter-status="all">全部</button>
+              <button class="filter-btn" data-filter-status="ongoing">進行中</button>
+              <button class="filter-btn" data-filter-status="done">已完成</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card" data-type="平台 動作 射擊" data-status="ongoing">
+            <div class="project-thumb">
+              <span>封面圖預留</span>
+            </div>
+            <div class="project-body">
+              <h3>像素跳台冒險</h3>
+              <p>
+                一款結合平台跳躍與射擊元素的 2D 像素風遊戲，
+                玩家將操作主角在層層機關中躲避敵人、收集道具，
+                挑戰每一關的隱藏路線。
+              </p>
+              <div class="project-meta">
+                <span class="tag">平台</span>
+                <span class="tag">動作</span>
+                <span class="tag">射擊</span>
+                <span class="badge-status status-ongoing">進行中</span>
+              </div>
+              <p class="project-style">美術風格／技術：2D、像素風</p>
+              <p class="project-team">製作者：管理員</p>
+              <div class="project-links">
+                <a href="#" target="_blank" rel="noopener">itch.io</a>
+                <a href="#" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="no-results" id="noResults">目前沒有符合篩選條件的專案。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p class="footer-logo">NTUT GDC ｜ 北科遊戲研究社</p>
+      <ul class="footer-links">
+        <li><a href="contact.html#discord">Discord</a></li>
+        <li><a href="contact.html#instagram">Instagram</a></li>
+        <li><a href="contact.html#email">Email</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 NTUT GDC 北科遊戲研究社</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>

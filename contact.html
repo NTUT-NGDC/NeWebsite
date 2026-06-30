@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>聯絡我們 - NTUT GDC 北科遊戲研究社</title>
+  <meta name="description" content="聯絡 NTUT GDC 北科遊戲研究社的方式、社課時間地點與常見問題。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="pixel-decor" id="pixelDecor" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">NTUT GDC</a>
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-list">
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="projects.html">專案展示</a></li>
+          <li><a href="events.html">活動公告</a></li>
+          <li><a href="join.html">加入我們</a></li>
+          <li><a href="contact.html" aria-current="page">聯絡我們</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h1>聯絡我們</h1>
+          <p>有任何問題都歡迎透過以下方式聯絡我們</p>
+        </div>
+
+        <div class="contact-list">
+          <div class="contact-item" id="email">
+            <h3>Email</h3>
+            <p><a href="mailto:ntutgdc@example.com">ntutgdc@example.com</a>（版位預留）</p>
+          </div>
+          <div class="contact-item" id="discord">
+            <h3>Discord</h3>
+            <p><a href="#">加入社團 Discord 群組</a>（版位預留）</p>
+          </div>
+          <div class="contact-item" id="instagram">
+            <h3>Instagram</h3>
+            <p><a href="#">@ntut_gdc</a>（版位預留）</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-title">
+          <h2>社課時間地點</h2>
+        </div>
+        <div class="card">
+          <p>時間：每週（待補）｜地點：國立臺北科技大學（教室待補）</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>常見問題</h2>
+        </div>
+
+        <!--
+          ▼ 如何新增一筆 FAQ ▼
+          複製一整段 <div class="faq-item">...</div>，
+          貼到下方，修改問題（.faq-q）與答案（<p>）即可。
+        -->
+        <div class="faq-list">
+          <div class="faq-item">
+            <p class="faq-q">Q. 沒有經驗可以加入嗎？</p>
+            <p>A. 可以！我們歡迎完全零經驗的新朋友，社課與夥伴會陪你一起從零開始學習。</p>
+          </div>
+          <div class="faq-item">
+            <p class="faq-q">Q. 一定要會寫程式才能加入嗎？</p>
+            <p>A. 不需要。遊戲開發需要企劃、美術、音樂等各種專長，程式只是其中一環。</p>
+          </div>
+          <div class="faq-item">
+            <p class="faq-q">Q. 中途想換組或換職位可以嗎？</p>
+            <p>A. 可以，歡迎依照自己的興趣彈性調整參與的專案與角色。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p class="footer-logo">NTUT GDC ｜ 北科遊戲研究社</p>
+      <ul class="footer-links">
+        <li><a href="#discord">Discord</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#email">Email</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 NTUT GDC 北科遊戲研究社</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

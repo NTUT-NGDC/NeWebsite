@@ -1,0 +1,12 @@
+# 作業系統產生的雜訊檔案
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 編輯器 / IDE 個人設定
+.vscode/
+.idea/
+
+# 暫存與紀錄檔
+*.log
+*.tmp
