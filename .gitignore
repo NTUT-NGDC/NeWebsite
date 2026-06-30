@@ -10,3 +10,10 @@ desktop.ini
 # 暫存與紀錄檔
 *.log
 *.tmp
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
