@@ -184,7 +184,7 @@ img {
 }
 
 .logo {
-  font-family: var(--font-pixel);
+  font-family: "Press Start 2P", monospace;
   font-size: 0.95rem;
   color: var(--color-yellow);
 }
@@ -432,7 +432,7 @@ img {
 .step::before {
   counter-increment: step;
   content: counter(step);
-  font-family: var(--font-pixel);
+  font-family: "Press Start 2P", monospace;
   color: var(--color-bg);
   background-color: var(--color-blue-bright);
   width: 32px;
@@ -676,7 +676,7 @@ img {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.75rem;
 }
 
@@ -684,7 +684,7 @@ img {
   background-color: var(--color-bg-card);
   border: 2px solid var(--color-blue-dim);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
@@ -698,7 +698,7 @@ img {
 }
 
 .project-thumb {
-  height: 150px;
+  flex: 0 0 42%;
   background-color: var(--color-bg-alt);
   background-image:
     repeating-linear-gradient(45deg, var(--color-blue-dim) 0, var(--color-blue-dim) 2px, transparent 2px, transparent 14px),
@@ -706,7 +706,15 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 2px solid var(--color-blue-dim);
+  border-right: 2px solid var(--color-blue-dim);
+  overflow: hidden;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .project-thumb span {
@@ -736,6 +744,11 @@ img {
   color: var(--color-blue-bright);
   border: 1px solid var(--color-blue-bright);
   padding: 0.15rem 0.5rem;
+}
+
+.tag--workshop {
+  color: var(--color-yellow-cta);
+  border-color: var(--color-yellow-cta);
 }
 
 .badge-status {
@@ -873,6 +886,17 @@ img {
   .announcement {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-thumb {
+    flex: none;
+    aspect-ratio: 16 / 9;
+    border-right: none;
+    border-bottom: 2px solid var(--color-blue-dim);
   }
 }
 

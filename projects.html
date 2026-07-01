@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>專案展示 - NGDC 北科遊戲研究社</title>
-  <meta name="description" content="NGDC 北科遊戲研究社正在進行的遊戲開發專案展示。" />
+  <meta name="description" content="NGDC 北科遊戲研究社社員正在進行與已完成的遊戲開發專案。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -41,28 +41,34 @@
 
         <!--
           ============================================================
-          ▼ 如何新增一筆新專案 ▼
-          1. 複製一整段 <article class="project-card">...</article>
-             （從 <article 開始到對應的 </article> 結束）
-          2. 貼到 .project-grid 區塊內
+          ▼ 如何新增一般個人專案 ▼
+          1. 複製下方標有「一般個人專案範本」的那段 <article>...</article>
+          2. 貼到 .project-grid 最上方（新作品放最前面）
           3. 修改以下內容：
-             - data-type="平台 動作 射擊"
-               → 改成此專案的遊戲類型（可複選，用空白分隔）
-               → 可用詞彙：平台 / 動作 / 射擊 / 解謎 / RPG
-                 （若要新增其他類型，記得同時在下方「篩選列」
-                 加入對應的 data-filter-type 按鈕）
+             - data-type="平台 動作"
+               → 改成此專案的遊戲類型（可複選，空白分隔）
+               → 可用：平台 / 動作 / 射擊 / 解謎 / RPG
+                 （若要新增新類型，記得同時在篩選列加入對應按鈕）
              - data-status="ongoing" 或 "done"
-               → ongoing = 進行中，done = 已完成
-             - .project-thumb 內文字：可替換成 <img> 放入真實截圖
-             - <h3> 專案名稱
-             - 簡介文字
-             - .tag：遊戲類型標籤（需與 data-type 一致）
-             - .badge-status：開發狀態文字
-               （進行中用 class="badge-status status-ongoing"，
-                已完成用 class="badge-status status-done"）
-             - .project-style：美術風格 / 技術描述
-             - .project-team：製作者或團隊名稱
-             - .project-links：外部連結（itch.io、GitHub、demo 等）
+             - 封面圖：把 <span>封面圖預留</span> 換成
+               <img src="assets/images/封面圖.jpg" alt="遊戲名稱截圖">
+               （建議圖片寬度約 1280px，高度會自動裁切至 210px）
+             - <h3>：遊戲名稱
+             - 簡介 <p>：一兩句說明
+             - .project-meta 裡的 .tag：遊戲類型 + 美術風格標籤
+             - .badge-status：開發狀態
+               進行中用 class="badge-status status-ongoing"
+               已完成用 class="badge-status status-done"
+             - .project-team：製作者名稱
+             - .project-links 裡的 <a>：外部連結（可多個，沒有就整個 div 刪掉）
+
+          ▼ 如何新增工作坊整合卡片 ▼
+          1. 複製下方標有「工作坊卡片範本」的那段 <article>...</article>
+          2. 貼到 .project-grid 適當位置
+          3. 修改方式同上，但注意：
+             - 沒有 .project-team 欄位（工作坊卡片不標示個人名字）
+             - .project-links 改為列出多個作品連結（作品一、作品二…）
+             - 記得保留 class="tag tag--workshop" 的「工作坊作品」標籤
           ============================================================
         -->
 
@@ -90,31 +96,59 @@
         </div>
 
         <div class="project-grid">
-          <article class="project-card" data-type="平台 動作 射擊" data-status="ongoing">
+
+          <!-- ★ 工作坊卡片範本 -->
+          <article class="project-card" data-type="平台" data-status="done">
             <div class="project-thumb">
-              <span>封面圖預留</span>
+              <img src="assets/images/114-2工作坊.png" alt="114-2 從 0 到 1 遊戲工作坊 第一期 — 四件學員作品封面拼圖" />
             </div>
             <div class="project-body">
-              <h3>像素跳台冒險</h3>
+              <h3>114-2 從 0 到 1 遊戲工作坊 第一期</h3>
               <p>
-                一款結合平台跳躍與射擊元素的 2D 像素風遊戲，
-                玩家將操作主角在層層機關中躲避敵人、收集道具，
-                挑戰每一關的隱藏路線。
+                四位社員在四週內，從零做出各自的第一款遊戲，
+                全部都是 2D 平台類型，使用免程式工具製作。
+              </p>
+              <div class="project-meta">
+                <span class="tag">平台</span>
+                <span class="tag">2D</span>
+                <span class="tag tag--workshop">工作坊作品</span>
+                <span class="badge-status status-done">已完成</span>
+              </div>
+              <div class="project-links">
+                <a href="https://play.unity.com/en/games/085a997e-a0d0-4105-9c79-ca3cd744343c/game" target="_blank" rel="noopener">▶ 試玩作品一</a>
+                <a href="https://play.unity.com/en/games/5b7bc747-281d-48c7-9b76-58fb90e926b0/world-vanquisher" target="_blank" rel="noopener">▶ 試玩作品二</a>
+                <a href="https://play.unity.com/en/games/07c7f843-f746-4dd7-89e1-d0f518943de5/514" target="_blank" rel="noopener">▶ 試玩作品三</a>
+                <a href="https://play.unity.com/en/games/c932e681-c671-4469-8e8a-58ac16385f09/6lw36aob5zcniceg5a26lkd" target="_blank" rel="noopener">▶ 試玩作品四</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ★ 一般個人專案範本 -->
+          <article class="project-card" data-type="平台 動作 射擊" data-status="ongoing">
+            <div class="project-thumb">
+              <img src="assets/images/Zenai.png" alt="Zenai: Revenge 截圖" />
+            </div>
+            <div class="project-body">
+              <h3>Zenai: Revenge</h3>
+              <p>
+                一款節奏緊湊的動作原型遊戲，主角是一名史萊姆女刺客。
+                利用她的反彈移動與左輪手槍，精準打擊敵人弱點，在戰場上掌握絕對主導權。
               </p>
               <div class="project-meta">
                 <span class="tag">平台</span>
                 <span class="tag">動作</span>
                 <span class="tag">射擊</span>
+                <span class="tag">2D</span>
+                <span class="tag">像素風</span>
                 <span class="badge-status status-ongoing">進行中</span>
               </div>
-              <p class="project-style">美術風格／技術：2D、像素風</p>
               <p class="project-team">製作者：露柑</p>
               <div class="project-links">
-                <a href="#" target="_blank" rel="noopener">itch.io</a>
-                <a href="#" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://play.unity.com/en/games/b94dbc39-86e1-40a8-9387-6fb791464e96/zenai-revenge" target="_blank" rel="noopener">▶ 試玩 Zenai: Revenge</a>
               </div>
             </div>
           </article>
+
         </div>
 
         <p class="no-results" id="noResults">目前沒有符合篩選條件的專案。</p>
