@@ -26,8 +26,8 @@
   --color-blue-dim: #2c5a7a;
   --color-blue-pale: #7fb8e6;
   --color-border-soft: #1d3a55;
-  --color-yellow: #ffff00;
-  --color-yellow-cta: #ffe600;
+  --color-yellow: #d6bf12;
+  --color-yellow-cta: #d6bf12;
   --color-white: #ffffff;
   --color-white-dim: rgba(255, 255, 255, 0.72);
   --font-pixel: "Cubic 11", "Noto Sans TC", monospace;
@@ -291,8 +291,8 @@ img {
 
 .btn-outline-yellow {
   background-color: transparent;
-  color: var(--color-yellow-cta);
-  border: 2px solid var(--color-yellow-cta);
+  color: var(--color-yellow);
+  border: 2px solid var(--color-yellow);
   box-shadow: 4px 4px 0 var(--color-blue-dim);
 }
 
@@ -747,8 +747,8 @@ img {
 }
 
 .tag--workshop {
-  color: var(--color-yellow-cta);
-  border-color: var(--color-yellow-cta);
+  color: var(--color-yellow);
+  border-color: var(--color-yellow);
 }
 
 .badge-status {
