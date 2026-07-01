@@ -30,7 +30,7 @@
   --color-yellow-cta: #ffe600;
   --color-white: #ffffff;
   --color-white-dim: rgba(255, 255, 255, 0.72);
-  --font-pixel: "Press Start 2P", "Cubic 11", "Noto Sans TC", monospace;
+  --font-pixel: "Cubic 11", "Noto Sans TC", monospace;
   --font-body: "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif;
   --container-width: 1100px;
   --header-height: 72px;
@@ -289,6 +289,19 @@ img {
   border-color: var(--color-yellow);
 }
 
+.btn-outline-yellow {
+  background-color: transparent;
+  color: var(--color-yellow-cta);
+  border: 2px solid var(--color-yellow-cta);
+  box-shadow: 4px 4px 0 var(--color-blue-dim);
+}
+
+.btn-outline-yellow:hover {
+  color: var(--color-yellow);
+  border-color: var(--color-yellow);
+  box-shadow: 2px 2px 0 var(--color-blue-dim);
+}
+
 /* =====================================================
    Hero（首頁）
    ===================================================== */
@@ -428,6 +441,55 @@ img {
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+}
+
+/* =====================================================
+   期許清單 / CTA 群組（加入我們）
+   ===================================================== */
+.join-tagline {
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.perk-list {
+  max-width: 680px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.perk-list li {
+  color: var(--color-white-dim);
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.7;
+}
+
+.perk-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-blue-bright);
+}
+
+.perk-note {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-blue-pale);
+  font-style: italic;
+}
+
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 /* =====================================================
