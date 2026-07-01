@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>活動公告 - NGDC 北科遊戲研究社</title>
-  <meta name="description" content="NGDC 北科遊戲研究社的近期公告與過往活動紀錄。" />
+  <title>活動紀錄 - NGDC 北科遊戲研究社</title>
+  <meta name="description" content="NGDC 北科遊戲研究社歷次活動紀錄，包含工作坊、課程與合辦活動。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -21,7 +21,7 @@
         <ul class="nav-list">
           <li><a href="index.html">首頁</a></li>
           <li><a href="projects.html">專案展示</a></li>
-          <li><a href="events.html" aria-current="page">活動公告</a></li>
+          <li><a href="events.html" aria-current="page">活動紀錄</a></li>
           <li><a href="join.html">加入我們</a></li>
           <li><a href="contact.html">聯絡我們</a></li>
         </ul>
@@ -35,58 +35,78 @@
       <div class="wave-decoration wave-decoration--right" aria-hidden="true"></div>
       <div class="container">
         <div class="section-title">
-          <h1>活動公告</h1>
-          <p>社團近期消息與過往活動紀錄</p>
+          <h1>活動紀錄</h1>
+          <p>社團以往舉辦的活動紀錄</p>
+        </div>
+
+        <!-- Discord 提示 -->
+        <div class="notice-card">
+          <p>想知道最新活動消息？加入我們的 Discord 社群，所有公告第一時間在那裡發布。</p>
+          <a href="https://discord.gg/KpZhJA3yag" class="notice-btn" target="_blank" rel="noopener">加入 Discord →</a>
         </div>
 
         <!--
           ============================================================
-          ▼ 如何新增一筆新公告 ▼
+          ▼ 如何新增一筆活動紀錄 ▼
           1. 複製一整段 <article class="announcement">...</article>
-          2. 貼到對應區塊內（近期公告 或 過往活動紀錄）的最上方
-          3. 修改日期（.announcement-date）、標題（<h3>）與說明文字（<p>）
-          4. 若是已結束的活動，記得把整篇移到「過往活動紀錄」區塊，
-             並替 <article> 加上 class="announcement is-past"
+          2. 貼到對應學期的 .announcement-list 最上方（由新到舊排列）
+          3. 修改：
+             - .announcement-date：日期（格式 YYYY.MM.DD；
+               若確切日期未定，可寫 YYYY.MM）
+             - <h3>：活動名稱
+             - <p>：一兩句活動簡介
+             - 若有學員作品連結，保留最後那行 <a class="event-link">，
+               將 href="#" 換成實際連結；若無作品則整行刪掉
+          4. 若要新增新學期，在列表最上方複製一個
+             <p class="event-semester"> 與對應的 <div class="announcement-list">
           ============================================================
         -->
 
-        <h2>近期公告</h2>
+        <p class="event-semester">2025 下學期</p>
         <div class="announcement-list">
+
           <article class="announcement">
-            <div class="announcement-date">2026.07.10</div>
+            <div class="announcement-date">2025.06.11</div>
             <div class="announcement-body">
-              <h3>暑期遊戲開發工作坊招募中</h3>
+              <h3>獨立桌遊開發實務分享會</h3>
               <p>
-                不限經驗皆可參加，從零開始學習用 Godot 做出你的第一款小遊戲。
-                報名連結與詳細時間將於社團 Discord 公布。
+                這次我們邀請了一個真正在做獨立桌遊的新創團隊來分享第一手的開發經驗——
+                從遊戲機制設計、找印刷廠、成本計算，到小團隊怎麼宣傳和做市場測試，全部都聊。
+                活動現場還能搶先試玩他們的 TCG 卡牌遊戲《超額索賠》。
               </p>
             </div>
           </article>
 
           <article class="announcement">
-            <div class="announcement-date">2026.07.24</div>
+            <div class="announcement-date">2025.05.21 — 06.04</div>
             <div class="announcement-body">
-              <h3>社課：像素美術入門</h3>
+              <h3>揭開遊戲 AI 的面紗：狀態機與 Boss 戰實作</h3>
+              <p class="event-meta">共三週 ｜ 與北科程式設計研究社合辦</p>
               <p>
-                邀請社內美術組成員分享像素風格美術製作流程與工具使用技巧，
-                歡迎對美術有興趣的社員與外部朋友一同參加。
+                用 Godot 引擎從零實作一場 Boss 戰。
+                第一週搭建 AI 狀態機架構，第二週設計玩家武裝與 Boss 戰術，
+                第三週加上 Game Feel 與換皮，讓整個戰鬥活起來。
               </p>
             </div>
           </article>
-        </div>
 
-        <h2 style="margin-top: 3rem;">過往活動紀錄</h2>
-        <div class="announcement-list">
-          <article class="announcement is-past">
-            <div class="announcement-date">2026.04.18</div>
+          <article class="announcement">
+            <div class="announcement-date">2025.04.09 — 05.14</div>
             <div class="announcement-body">
-              <h3>2026 春季迎新茶會</h3>
+              <h3>從 0 到 1 遊戲工作坊 第一期</h3>
+              <p class="event-meta">共四週</p>
               <p>
-                社團迎新活動順利落幕，感謝所有新舊社員的參與，
-                期待大家在接下來的學期一起做出更多有趣的作品。
+                不寫一行程式，也能做出一個真正能玩的遊戲。
+                這個工作坊不教你怎麼做 3A 大作，比較像是一個遊戲設計實驗室
+                Week 1 在嚴苛限制下找出核心好玩點，Week 2 用視覺與音效把手感放大，
+                Week 3 學著用關卡設計取代說明書，Week 4 帶著不完美的作品走上發表台。
+                四週下來十小時，每位學員都帶走了一個自己做的遊戲。
               </p>
+              <!-- 之後請將下方 href="#" 換成實際的學員作品連結 -->
+              <a href="#" class="event-link">查看本次學員作品 →</a>
             </div>
           </article>
+
         </div>
       </div>
     </section>
