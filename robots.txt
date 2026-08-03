@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gd.ntut.club/sitemap.xml
