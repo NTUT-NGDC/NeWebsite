@@ -751,6 +751,11 @@ img {
   border-color: var(--color-yellow);
 }
 
+.tag--jam {
+  color: var(--color-blue-pale);
+  border-color: var(--color-blue-pale);
+}
+
 .badge-status {
   font-size: 0.7rem;
   padding: 0.15rem 0.5rem;
