@@ -530,6 +530,11 @@ img {
   margin-bottom: 0.5rem;
 }
 
+/* 長字串（如 Email）沒有空格可斷行，避免撐出卡片 */
+.contact-item p {
+  overflow-wrap: anywhere;
+}
+
 /* =====================================================
    活動紀錄（events.html）
    ===================================================== */
@@ -570,8 +575,13 @@ img {
   font-size: 0.75rem;
   color: var(--color-blue-pale);
   margin: 0 0 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--color-border-soft);
+}
+
+/* 學期之間的分隔線：畫在後面學期的標題上方 */
+.announcement-list + .event-semester {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-soft);
 }
 
 .event-meta {
@@ -801,6 +811,12 @@ img {
   display: block;
 }
 
+.repo-note {
+  margin-top: 2.5rem;
+  text-align: center;
+  color: var(--color-white-dim);
+}
+
 /* =====================================================
    首頁精選專案預覽
    ===================================================== */
@@ -836,6 +852,8 @@ img {
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
 }
 
