@@ -85,3 +85,68 @@
     });
   });
 })();
+
+/* =====================================================
+   拼格圖片燈箱
+   - 點 .project-thumb--gallery 裡的圖片，在頁面上浮動顯示大圖
+   - ← → 或按鈕切換同一張卡片的其他圖片，Esc 或點背景關閉
+   - 不支援 <dialog> 的瀏覽器維持原本的連結行為（開新分頁）
+   ===================================================== */
+(function () {
+  "use strict";
+
+  var galleries = document.querySelectorAll(".project-thumb--gallery");
+  if (!galleries.length || typeof HTMLDialogElement !== "function") return;
+
+  var dialog = document.createElement("dialog");
+  dialog.className = "lightbox";
+  dialog.innerHTML =
+    '<img class="lightbox-img" alt="" />' +
+    '<div class="lightbox-bar">' +
+    '<button type="button" class="lightbox-btn" data-step="-1" aria-label="上一張">◀</button>' +
+    '<span class="lightbox-caption"></span>' +
+    '<button type="button" class="lightbox-btn" data-step="1" aria-label="下一張">▶</button>' +
+    '<button type="button" class="lightbox-btn" data-close aria-label="關閉">✕</button>' +
+    "</div>";
+  document.body.appendChild(dialog);
+
+  var img = dialog.querySelector(".lightbox-img");
+  var caption = dialog.querySelector(".lightbox-caption");
+  var links = [];
+  var index = 0;
+
+  function show(i) {
+    index = (i + links.length) % links.length;
+    var thumb = links[index].querySelector("img");
+    img.src = links[index].href;
+    img.alt = thumb ? thumb.alt : "";
+    caption.textContent = img.alt + "（" + (index + 1) + " / " + links.length + "）";
+  }
+
+  galleries.forEach(function (gallery) {
+    var galleryLinks = Array.prototype.slice.call(gallery.querySelectorAll("a"));
+    galleryLinks.forEach(function (link, i) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        links = galleryLinks;
+        show(i);
+        dialog.showModal();
+      });
+    });
+  });
+
+  dialog.addEventListener("click", function (e) {
+    var step = e.target.closest("[data-step]");
+    if (step) {
+      show(index + Number(step.dataset.step));
+    } else if (e.target.closest("[data-close]") || e.target === dialog) {
+      // e.target === dialog 代表點到圖片外的背景
+      dialog.close();
+    }
+  });
+
+  dialog.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") show(index - 1);
+    if (e.key === "ArrowRight") show(index + 1);
+  });
+})();

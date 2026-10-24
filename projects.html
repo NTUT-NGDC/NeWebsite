@@ -82,9 +82,12 @@
           1. 複製下方標有「工作坊卡片範本」的那段 <article>...</article>
           2. 貼到 .project-grid 適當位置
           3. 修改方式同上，但注意：
-             - 沒有 .project-team 欄位（工作坊卡片不標示個人名字）
+             - .project-team 可省略；學員同意的話可改成「學員：暱稱、暱稱…」（如 115-1 第二期）
              - .project-links 改為列出多個作品連結（作品一、作品二…）
              - 記得保留 class="tag tag--workshop" 的「工作坊作品」標籤
+             - 若有多張作品圖不想先拼圖：.project-thumb 加上 project-thumb--gallery，
+               裡面放六個 <a href="圖"><img src="圖"></a>，會自動排成 3×2 拼格
+               （可參考 115-1 第二期卡片）
           ============================================================
         -->
 
@@ -113,6 +116,42 @@
         </div>
 
         <div class="project-grid">
+
+          <!-- 115-1 工作坊第二期：六件作品，封面用 3×2 拼格（project-thumb--gallery） -->
+          <article class="project-card" data-type="平台" data-status="done">
+            <div class="project-thumb project-thumb--gallery">
+              <a href="assets/images/AaaBbp.png" target="_blank" rel="noopener"><img src="assets/images/AaaBbp.png" alt="死萊姆 標題畫面" loading="lazy" /></a>
+              <a href="assets/images/omino.png" target="_blank" rel="noopener"><img src="assets/images/omino.png" alt="METAL RUSH 標題畫面" loading="lazy" /></a>
+              <a href="assets/images/Silvite.png" target="_blank" rel="noopener"><img src="assets/images/Silvite.png" alt="Ride the Tide 標題畫面" loading="lazy" /></a>
+              <a href="assets/images/Leo_768.png" target="_blank" rel="noopener"><img src="assets/images/Leo_768.png" alt="跳高高 標題畫面" loading="lazy" /></a>
+              <a href="assets/images/糖夢.png" target="_blank" rel="noopener"><img src="assets/images/糖夢.png" alt="Yeeaah 標題畫面" loading="lazy" /></a>
+              <a href="assets/images/T.K..png" target="_blank" rel="noopener"><img src="assets/images/T.K..png" alt="Sheller 脫殼旅行 標題畫面" loading="lazy" /></a>
+            </div>
+            <div class="project-body">
+              <h3>115-1 從 0 到 1 遊戲工作坊 第二期</h3>
+              <p>
+                六位社員在五週內，使用 Godot 搭配社團自製的免程式實驗包，
+                從抽機制卡做實驗、用起承轉合排關卡、替同一份關卡調手感，到最後幫遊戲穿上外衣，
+                並在發布之夜站上台分享自己作品的驕傲與掙扎。
+              </p>
+              <div class="project-meta">
+                <span class="tag">平台</span>
+                <span class="tag">2D</span>
+                <span class="tag">Godot</span>
+                <span class="tag tag--workshop">工作坊作品</span>
+                <span class="badge-status status-done">已完成</span>
+              </div>
+              <p class="project-team">學員：AaaBbp、omino、Silvite、Leo_768、糖夢、T.K.</p>
+              <div class="project-links">
+                <a href="https://aaabbp.itch.io/test1" target="_blank" rel="noopener">▶ 死萊姆（AaaBbp）</a>
+                <a href="https://omino-os.itch.io/metal-rush" target="_blank" rel="noopener">▶ METAL RUSH（omino）</a>
+                <a href="https://ssilvite.itch.io/ride-the-tide" target="_blank" rel="noopener">▶ Ride the Tide（Silvite）</a>
+                <a href="https://leo768.itch.io/little-parkour?password=cool-parkour" target="_blank" rel="noopener">▶ 跳高高（Leo_768）</a>
+                <a href="https://l00f-tw.itch.io/yeeaah" target="_blank" rel="noopener">▶ Yeeaah（糖夢）</a>
+                <a href="https://tk3356.itch.io/test" target="_blank" rel="noopener">▶ Sheller 脫殼旅行（T.K.）</a>
+              </div>
+            </div>
+          </article>
 
           <!-- GMTK Game Jam 2026 參賽作品 -->
           <article class="project-card" data-type="平台 潛行" data-status="done">
