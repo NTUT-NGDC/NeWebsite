@@ -514,10 +514,22 @@ img {
 /* =====================================================
    聯絡資訊清單
    ===================================================== */
+/* 一排三張、最後一排置中，避免單張卡片落在左邊 */
 .contact-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
+}
+
+.contact-list .contact-item {
+  flex: 0 1 calc((100% - 3rem) / 3);
+}
+
+@media (max-width: 768px) {
+  .contact-list .contact-item {
+    flex-basis: 100%;
+  }
 }
 
 .contact-item {
